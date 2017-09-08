@@ -26,3 +26,16 @@
 ```
 <?$APPLICATION->ShowTitle(false);?>
 ```
+
+> Подключение css и js
+```
+$APPLICATION->SetAdditionalCss(SITE_TEMPLATE_PATH."/css/catalog.css");
+$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-ui.min.js");
+```
+
+С помощью d7
+```
+use Bitrix\Main\Page\Asset
+Asset:getInstance()->addCss(SITE_TEMPLATE_PATH."/css/catalog.css");
+Asset:getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jscript.js");
+```

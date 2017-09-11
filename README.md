@@ -59,15 +59,16 @@ function dump($var, $die=false, $all=false)
 
 #Улучшаем структуру
 > Желаемая структура папки local
-		/local/templates/
-		/local/php_interface/
-		/local/php_interface/init.php
-		/local/php_interface/include - Подключаемые файлы 
-		/local/include - <i>Включаемые области</i>
-		/local/css/
-		/local/js/
-		/local/ajax/
-		...
+```
+/local/templates/
+/local/php_interface/
+/local/php_interface/init.php
+/local/php_interface/include - Подключаемые файлы 
+/local/include - <i>Включаемые области</i>
+/local/css/
+/local/js/
+/local/ajax/	
+```
 	
 
  <b>/local/php_interface/init.php</b>

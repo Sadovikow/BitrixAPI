@@ -57,6 +57,19 @@ function dump($var, $die=false, $all=false)
 }
 ```
 
+#Улучшаем структуру
+> Желаемая структура папки local
+	/local/templates/
+	/local/php_interface/
+	/local/php_interface/init.php
+	/local/php_interface/include - Подключаемые файлы 
+	/local/include - <i>Включаемые области</i>
+	/local/css/
+	/local/js/
+	/local/ajax/
+	...
+	
+
  <b>/local/php_interface/init.php</b>
 Файл может содержать в себе инициализацию обработчиков событий, подключение дополнительных функций - общие для всех сайтов. Для каждого отдельного сайта может быть свой аналогичный файл. В этом случае он располагается по пути /bitrix/php_interface/ID сайта/init.php
 
@@ -64,6 +77,7 @@ function dump($var, $die=false, $all=false)
 Пример файла <b>init.php</b>:
 ```php
 <?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 //ID инфоблоков
 define("IBLOCK_SPECIALITY_ID", 17); //Специальности
 define("IBLOCK_APPOINTMENT_ID", 36); //Запись к врачу 

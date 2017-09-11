@@ -39,3 +39,20 @@ use Bitrix\Main\Page\Asset
 Asset:getInstance()->addCss(SITE_TEMPLATE_PATH."/css/catalog.css");
 Asset:getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jscript.js");
 ```
+
+
+> Функция dump для вывода массивов, видная только админу ( или всем )
+```php
+function dump($var, $die=false, $all=false)
+{
+      global $USER;
+      if( ($USER->GetID()==1) || ($all==true) )
+      {
+            echo '<pre>';
+            print_r($var);
+            echo '</pre>';
+      }
+      if($die)
+      die('hello');
+}
+```

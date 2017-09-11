@@ -56,3 +56,42 @@ function dump($var, $die=false, $all=false)
       die('hello');
 }
 ```
+
+ <b>/local/php_interface/init.php</b>
+Файл может содержать в себе инициализацию обработчиков событий, подключение дополнительных функций - общие для всех сайтов. Для каждого отдельного сайта может быть свой аналогичный файл. В этом случае он располагается по пути /bitrix/php_interface/ID сайта/init.php
+
+Чтобы init.php не превращался в свалку непонятного кода следует код размещать логически группируя по файлам и классам.
+Пример файла <b>init.php</b>:
+```php
+<?
+//ID инфоблоков
+define("IBLOCK_SPECIALITY_ID", 17); //Специальности
+define("IBLOCK_APPOINTMENT_ID", 36); //Запись к врачу 
+define("IBLOCK_BACK_CALL_ID", 37); //Обратный звонок
+//подключение доп файлов
+if(file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/include.php")){
+	require_once($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/include.php");
+}
+if(file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/function.php")){
+	require_once($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/function.php");
+}
+
+//Отправка сообщения пользователю, после регистрации
+AddEventHandler("main", "OnAfterUserAdd", "OnAfterUserRegisterHandler");
+AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
+    function OnAfterUserRegisterHandler(&$arFields)
+    {
+	   if (intval($arFields["ID"])>0)
+	   {
+		  $toSend = Array();
+		  $toSend["PASS"] = $arFields["CONFIRM_PASSWORD"];
+		  $toSend["EMAIL"] = $arFields["EMAIL"];
+		  $toSend["LOGIN"] = $arFields["LOGIN"];
+		  $toSend["NAME"] = (trim ($arFields["NAME"]) == "")? $toSend["NAME"] = htmlspecialchars('<Не указано>'): $arFields["NAME"];
+		  $toSend["LAST_NAME"] = (trim ($arFields["LAST_NAME"]) == "")? $toSend["LAST_NAME"] = htmlspecialchars('<Не указано>'): $arFields["LAST_NAME"];
+		  CEvent::Send("USER_REG", SITE_ID, $toSend, "N", 94);
+	   }
+	   return $arFields;
+    }
+
+```

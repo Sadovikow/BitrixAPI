@@ -81,7 +81,8 @@ CEvent::Send("ALX_FEEDBACK_FORM", "h1", $arEventFields, $postTemplate);
 /local/include - <i>Включаемые области</i>
 /local/css/
 /local/js/
-/local/ajax/	
+/local/ajax/
+/local/components/
 ```
 	
 

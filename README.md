@@ -35,9 +35,10 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-ui.min.js");
 
 С помощью d7
 ```
-use Bitrix\Main\Page\Asset
+use Bitrix\Main\Page\Asset;
 Asset:getInstance()->addCss(SITE_TEMPLATE_PATH."/css/catalog.css");
 Asset:getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jscript.js");
+
 ```
 
 
@@ -55,6 +56,19 @@ function dump($var, $die=false, $all=false)
       if($die)
       die('hello');
 }
+```
+
+Отправка почты
+```php
+/* Отправка письма администратору */
+$postTemplate = 92;     // ID Шаблона
+$arEventFields = array( // Свойства
+    "EMAIL"   => $_POST['email'],
+    "FIO"     => $_POST['fio'],
+    "PHONE"   => $_POST['phone'],
+    "COMMENT" => $_POST['comment']
+);
+CEvent::Send("ALX_FEEDBACK_FORM", "h1", $arEventFields, $postTemplate);
 ```
 
 #Улучшаем структуру

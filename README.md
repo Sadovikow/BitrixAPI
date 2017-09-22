@@ -27,6 +27,11 @@
 <?$APPLICATION->ShowTitle(false);?>
 ```
 
+Получить путь к картинке
+```php
+CFile::GetPath($arItem["PICTURE"]);
+```
+
 > Подключение css и js
 ```
 $APPLICATION->SetAdditionalCss(SITE_TEMPLATE_PATH."/css/catalog.css");

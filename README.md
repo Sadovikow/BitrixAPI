@@ -37,8 +37,11 @@ ResizeImageGet
 $arResult["DETAIL_PICTURE_SMALL"] = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"], Array("width" => ШИРИНА, "height" => ВЫСОТА), BX_RESIZE_IMAGE_PROPORTIONAL, false);
 ```
 > BX_RESIZE_IMAGE_PROPORTIONAL - Сохранение пропорций
+
 > BX_RESIZE_IMAGE_EXACT - Cохранение пропорций с обрезанием по заданной ширине и высоте;
+
 > BX_RESIZE_IMAGE_PROPORTIONAL_ALT - масштабирует с сохранением пропорций за ширину при этом принимается максимальное значение из высоты/ширины, размер ограничивается $arSize, улучшенная обработка вертикальных картинок.
+
 
 
 > Подключение css и js

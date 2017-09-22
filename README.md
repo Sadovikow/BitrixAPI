@@ -4,26 +4,26 @@
 
 
 Вывод title в основном шаблоне сайта.
-```
+```php
 <?$APPLICATION->ShowTitle()?>
 ```
       
 Подключение для вывода в шаблоне сайта основных полей тега : мета-теги Content-Type, robots, keywords, description; стили CSS; скрипты.
-```
+```php
     <?$APPLICATION->ShowHead()?>
 ```    
 Выводит панель управления администратора.
-```
+```php
 <?$APPLICATION->ShowPanel();?>
 ```
 
 Подставляет путь к шаблону.
-```
+```php
 <?=SITE_TEMPLATE_PATH?>
 ```
 
 > Заголовок (в h1 например использовать).
-```
+```php
 <?$APPLICATION->ShowTitle(false);?>
 ```
 
@@ -33,13 +33,13 @@ CFile::GetPath($arItem["PICTURE"]);
 ```
 
 > Подключение css и js
-```
+```php
 $APPLICATION->SetAdditionalCss(SITE_TEMPLATE_PATH."/css/catalog.css");
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-ui.min.js");
 ```
 
 С помощью d7
-```
+```php
 use Bitrix\Main\Page\Asset;
 Asset:getInstance()->addCss(SITE_TEMPLATE_PATH."/css/catalog.css");
 Asset:getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jscript.js");

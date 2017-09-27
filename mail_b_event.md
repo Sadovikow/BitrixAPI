@@ -8,5 +8,4 @@
   select * from b_event 
     where event_name like '%form%' 
     order by date_insert desc
-  via: Bitrix FAQ
 ```

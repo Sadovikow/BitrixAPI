@@ -142,3 +142,18 @@ AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
     }
 
 ```
+
+
+#  Вызов включаемой области - из файла
+
+```php
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "file",
+		"MODE" => "php",
+		"PATH" => "/local/include/phone.php"
+	)
+);?>
+```

@@ -75,6 +75,22 @@ function dump($var, $die=false, $all=false)
 }
 ```
 
+Запрос из инфоблока по элементам
+CIBlockElement::GetList 
+```php
+$arraySize = count($array);
+$arSort   = array('DATE_CREATE' => 'DESC');
+$arFilter = Array("IBLOCK_ID"=> IBLOCK_CATALOG_ID, "ID" => $array, "ACTIVE"=>"Y");
+$navParams = Array("nPageSize"=>$arraySize);
+$arSelect = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM");
+$dbFields = CIBlockElement::GetList($arSort, $arFilter, false, $navParams, $arSelect);
+while($dbElement = $dbFields->GetNextElement())
+{
+   $arFields = $dbElement->GetFields();
+   $arFields[PROPERTIES] = $ob->GetProperties();
+}
+```
+
 Отправка почты
 ```php
 /* Отправка письма администратору */

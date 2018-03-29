@@ -173,3 +173,12 @@ AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
 	)
 );?>
 ```
+
+# Достать информацию о текущем пользователе
+
+```php
+	global $USER;
+	echo $USER->GetID();
+	echo $USER->GetLogin();
+	echo $USER->GetFirstName();
+```

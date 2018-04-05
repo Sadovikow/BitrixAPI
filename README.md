@@ -182,3 +182,12 @@ AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
 	echo $USER->GetLogin();
 	echo $USER->GetFirstName();
 ```
+
+# Преобразование TIMESTAMP_X в формат Даты
+
+```php
+
+	$dd = $arItem[TIMESTAMP_X];
+	$ddd = strtotime($dd);
+	echo date("d.m.Y", $ddd);
+```

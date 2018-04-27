@@ -76,7 +76,7 @@ function dump($var, $die=false, $all=false)
 ```
 
 Запрос из инфоблока по элементам
-CIBlockElement::GetList 
+CIBlockElement::<b>GetList</b>
 ```php
 $arraySize = count($array);
 $arSort   = array('DATE_CREATE' => 'DESC');
@@ -87,7 +87,7 @@ $dbFields = CIBlockElement::GetList($arSort, $arFilter, false, $navParams, $arSe
 while($dbElement = $dbFields->GetNextElement())
 {
    $arFields = $dbElement->GetFields();
-   $arFields[PROPERTIES] = $ob->GetProperties();
+   $arFields[PROPERTIES] = $dbFields->GetProperties();
 }
 ```
 

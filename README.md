@@ -87,7 +87,7 @@ $dbFields = CIBlockElement::GetList($arSort, $arFilter, false, $navParams, $arSe
 while($dbElement = $dbFields->GetNextElement())
 {
    $arFields = $dbElement->GetFields();
-   $arFields[PROPERTIES] = $dbFields->GetProperties();
+   $arFields[PROPERTIES] = $dbElement->GetProperties();
 }
 ```
 

@@ -191,3 +191,40 @@ AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
 	$ddd = strtotime($dd);
 	echo date("d.m.Y", $ddd);
 ```
+
+# Количество найденных элементов инфоблока
+
+```php
+$arResult["NAV_RESULT"]->SelectedRowsCount();
+```
+
+# Количество найденных элементов инфоблока со склонениями
+
+```php
+function num2word($num, $words)
+{
+    $num = $num % 100;
+    if ($num > 19) {
+        $num = $num % 10;
+    }
+    switch ($num) {
+        case 1: {
+            return($words[0]);
+        }
+        case 2: case 3: case 4: {
+            return($words[1]);
+        }
+        default: {
+            return($words[2]);
+        }
+    }
+}?>
+	<span class="col">
+		<? $APPLICATION->ShowViewContent('count'); ?>
+	</span>
+<?
+$this->SetViewTarget('count');
+	$count = $arResult["NAV_RESULT"]->SelectedRowsCount();
+	$word = num2word($count, array('товар', 'товара', 'товаров'));
+	echo $count.' '.$word;
+$this->EndViewTarget();

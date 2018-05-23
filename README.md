@@ -245,14 +245,14 @@ overlay: {
 backgroundColor: '000000', opacity: '80' 
 } 
 }); 
-popup.show(); Нравится
+popup.show();
 var popup = BX.PopupWindowManager.create("popup-message", null, {
     content: "Hello World!",
    darkMode: true,
    autoHide: true
 });
 
-popup.show(); Нравится
+popup.show();
 content: 'Контент, отображаемый в теле окна',
            width: 400, // ширина окна
            height: 100, // высота окна

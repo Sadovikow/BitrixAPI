@@ -228,3 +228,53 @@ $this->SetViewTarget('count');
 	$word = num2word($count, array('товар', 'товара', 'товаров'));
 	echo $count.' '.$word;
 $this->EndViewTarget();
+```
+
+# Всплывающее окно JavaScript функция битрикса
+
+```javascript
+
+var popup = BX.PopupWindowManager.create("popup-message", null, { 
+content: "Товар добавлен в корзину", 
+autoHide : true, 
+offsetTop : 1, 
+offsetLeft : 0, 
+lightShadow : true, 
+closeByEsc : true, 
+overlay: { 
+backgroundColor: '000000', opacity: '80' 
+} 
+}); 
+popup.show(); Нравится
+var popup = BX.PopupWindowManager.create("popup-message", null, {
+    content: "Hello World!",
+   darkMode: true,
+   autoHide: true
+});
+
+popup.show(); Нравится
+content: 'Контент, отображаемый в теле окна',
+           width: 400, // ширина окна
+           height: 100, // высота окна
+           zIndex: 100, // z-index
+           closeIcon: {
+               // объект со стилями для иконки закрытия, при null - иконки не будет
+               opacity: 1
+           },
+           titleBar: 'Заголовок окна',
+           closeByEsc: true, // закрытие окна по esc
+           darkMode: false, // окно будет светлым или темным
+           autoHide: false, // закрытие при клике вне окна
+           draggable: true, // можно двигать или нет
+           resizable: true, // можно ресайзить
+           min_height: 100, // минимальная высота окна
+           min_width: 100, // минимальная ширина окна
+           lightShadow: true, // использовать светлую тень у окна
+           angle: true, // появится уголок
+           overlay: {
+               // объект со стилями фона
+               backgroundColor: 'black',
+               opacity: 500
+           },
+	   
+```		

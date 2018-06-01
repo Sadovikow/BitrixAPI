@@ -104,6 +104,9 @@ $arEventFields = array( // Свойства
 CEvent::Send("ALX_FEEDBACK_FORM", "h1", $arEventFields, $postTemplate);
 ```
 
+## Добавление элемента в инфоблок через форму
+<a href="https://github.com/Sadovikow/BitrixAPI/tree/master/CIBlockelement-Add">CIBlockelement-Add</a> - Идеальный пример. Реализовано при помощи технологии Ajax.
+
 #Улучшаем структуру
 > Желаемая структура папки local
 ```

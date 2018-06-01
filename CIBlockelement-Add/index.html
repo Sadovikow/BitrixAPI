@@ -1,0 +1,32 @@
+<form id="addNewRequest">
+  <input type="text" name="NAME" placeholder="Введите название заявки" />
+  <input type="text" name="PHONE" placeholder="Введите телефон" />
+  <input type="submit" value="Отправить" />
+</form>
+
+<script>
+function createRequest(id) {
+    var editForm = $('#'+id);
+    var param = editForm.serialize();
+    param = param+"&action=createRequest";
+    console.log(param);
+    $.ajax({
+        url:     '/personal/ajax/new_request.php', // URL отправки запроса
+        type:     "GET",
+        dataType: "html",
+        data: param, // Возвращаем строчку URL формата из всех заполненных данных формы
+        success: function(response) { // Если Данные отправлены успешно
+            console.log('Заявка отправлена!');
+        },
+        error: function(jqXHR, textStatus, errorThrown) { // Если ошибка, то выкладываем печаль в консоль
+            console.log('Error: '+ errorThrown);
+        }
+    });
+}
+
+$(document).ready(function() {
+    $('#addNewRequest').on('submit', function() {
+        createRequest(this.id);
+    });
+});
+</script>

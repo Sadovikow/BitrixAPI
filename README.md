@@ -1,5 +1,5 @@
 
-Основные функции Bitrix API
+Основные функции Bitrix API!
 ================
 
 
@@ -7,7 +7,7 @@
 ```php
 <?$APPLICATION->ShowTitle()?>
 ```
-      
+
 Подключение для вывода в шаблоне сайта основных полей тега : мета-теги Content-Type, robots, keywords, description; стили CSS; скрипты.
 ```php
     <?$APPLICATION->ShowHead()?>
@@ -16,7 +16,7 @@
 ```php
 <?$APPLICATION->ShowPanel();?>
 ```
-
+©
 Подставляет путь к шаблону.
 ```php
 <?=SITE_TEMPLATE_PATH?>
@@ -113,14 +113,14 @@ CEvent::Send("ALX_FEEDBACK_FORM", "h1", $arEventFields, $postTemplate);
 /local/templates/
 /local/php_interface/
 /local/php_interface/init.php
-/local/php_interface/include - Подключаемые файлы 
+/local/php_interface/include - Подключаемые файлы
 /local/include - <i>Включаемые области</i>
 /local/css/
 /local/js/
 /local/ajax/
 /local/components/
 ```
-	
+
 
  <b>/local/php_interface/init.php</b>
 Файл может содержать в себе инициализацию обработчиков событий, подключение дополнительных функций - общие для всех сайтов. Для каждого отдельного сайта может быть свой аналогичный файл. В этом случае он располагается по пути /bitrix/php_interface/ID сайта/init.php
@@ -132,7 +132,7 @@ CEvent::Send("ALX_FEEDBACK_FORM", "h1", $arEventFields, $postTemplate);
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 //ID инфоблоков
 define("IBLOCK_SPECIALITY_ID", 17); //Специальности
-define("IBLOCK_APPOINTMENT_ID", 36); //Запись к врачу 
+define("IBLOCK_APPOINTMENT_ID", 36); //Запись к врачу
 define("IBLOCK_BACK_CALL_ID", 37); //Обратный звонок
 //подключение доп файлов
 if(file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/include.php")){
@@ -237,17 +237,17 @@ $this->EndViewTarget();
 
 ```javascript
 
-var popup = BX.PopupWindowManager.create("popup-message", null, { 
-content: "Товар добавлен в корзину", 
-autoHide : true, 
-offsetTop : 1, 
-offsetLeft : 0, 
-lightShadow : true, 
-closeByEsc : true, 
-overlay: { 
-backgroundColor: '000000', opacity: '80' 
-} 
-}); 
+var popup = BX.PopupWindowManager.create("popup-message", null, {
+content: "Товар добавлен в корзину",
+autoHide : true,
+offsetTop : 1,
+offsetLeft : 0,
+lightShadow : true,
+closeByEsc : true,
+overlay: {
+backgroundColor: '000000', opacity: '80'
+}
+});
 popup.show();
 var popup = BX.PopupWindowManager.create("popup-message", null, {
     content: "Hello World!",
@@ -279,5 +279,5 @@ content: 'Контент, отображаемый в теле окна',
                backgroundColor: 'black',
                opacity: 500
            },
-	   
+
 ```		

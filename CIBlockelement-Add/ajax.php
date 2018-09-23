@@ -12,6 +12,7 @@ if($_GET['action'] == 'createRequest') {
     $arFields = array(
         "ACTIVE" => "Y",
         "IBLOCK_ID" => $IBLOCK,
+	"DATE_ACTIVE_FROM" => ConvertTimeStamp(false, "FULL");
         "NAME" => 'Элемент № '.$_GET['NAME'],
     );
     $oElement = new CIBlockElement();

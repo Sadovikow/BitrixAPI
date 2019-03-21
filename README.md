@@ -91,6 +91,12 @@ while($dbElement = $dbFields->GetNextElement())
 }
 ```
 
+Изменение свойства инфоблока
+CIBlockElement::<b>SetPropertyValuesEx</b>
+```php
+CIBlockElement::SetPropertyValuesEx($_POST['ELEMENT_ID'], $IBLOCK_ID, Array("CODE" => $_POST['VALUE']) );
+```
+
 Отправка почты
 ```php
 /* Отправка письма администратору */

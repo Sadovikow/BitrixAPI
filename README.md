@@ -91,6 +91,17 @@ while($dbElement = $dbFields->GetNextElement())
 }
 ```
 
+Запрос из инфоблока по разделам текущего раздела
+```php
+$rs_Section = CIBlockSection::GetList(array('left_margin' => 'asc'), array('IBLOCK_ID' => 5, 'SECTION_ID' => $arResult['SECTION_ID']));
+while ( $arSection = $rs_Section->Fetch() )
+{
+    $arSections[$arSection['ID']] = $arSection;
+}
+
+dump($arSections);
+```
+
 Изменение свойства инфоблока
 CIBlockElement::<b>SetPropertyValuesEx</b>
 ```php

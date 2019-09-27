@@ -102,6 +102,17 @@ while ( $arSection = $rs_Section->Fetch() )
 dump($arSections);
 ```
 
+Вывести разделы текущего раздела инфоблока
+```php
+$rs_Section = CIBlockSection::GetList(array('left_margin' => 'asc'), array('IBLOCK_ID' => 5, 'SECTION_ID' => $arResult['SECTION_ID']));
+while ( $arSection = $rs_Section->Fetch() )
+{
+    $arSections[$arSection['ID']] = $arSection;
+}
+
+dump($arSections);
+```
+
 Изменение свойства инфоблока
 CIBlockElement::<b>SetPropertyValuesEx</b>
 ```php

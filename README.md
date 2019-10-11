@@ -78,16 +78,19 @@ function dump($var, $die=false, $all=false)
 Запрос из инфоблока по элементам
 CIBlockElement::<b>GetList</b>
 ```php
-$arraySize = count($array);
-$arSort   = array('DATE_CREATE' => 'DESC');
-$arFilter = Array("IBLOCK_ID"=> IBLOCK_CATALOG_ID, "ID" => $array, "ACTIVE"=>"Y");
-$navParams = Array("nPageSize"=>$arraySize);
-$arSelect = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM");
-$dbFields = CIBlockElement::GetList($arSort, $arFilter, false, $navParams, $arSelect);
-while($dbElement = $dbFields->GetNextElement())
-{
-   $arFields = $dbElement->GetFields();
-   $arFields[PROPERTIES] = $dbElement->GetProperties();
+
+if(count($array > 0) {
+	$arraySize = count($array);
+	$arSort   = array('DATE_CREATE' => 'DESC');
+	$arFilter = Array("IBLOCK_ID"=> IBLOCK_CATALOG_ID, "ID" => $array, "ACTIVE"=>"Y");
+	$navParams = Array("nPageSize"=>$arraySize);
+	$arSelect = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "PROPERTY_CODE");
+	$dbFields = CIBlockElement::GetList($arSort, $arFilter, false, $navParams, $arSelect);
+	while($dbElement = $dbFields->GetNextElement())
+	{
+	   $arFields = $dbElement->GetFields();
+	   $arFields[PROPERTIES] = $dbElement->GetProperties(); // Не желательно, нужно пользоваться arSelect property_code
+	}
 }
 ```
 

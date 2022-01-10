@@ -311,4 +311,11 @@ content: 'Контент, отображаемый в теле окна',
                opacity: 500
            },
 
-```		
+```	
+
+
+Проверить отправку почтовых событий
+```sql
+select * from b_event
+order by date_insert desc
+```

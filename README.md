@@ -319,3 +319,16 @@ content: 'Контент, отображаемый в теле окна',
 select * from b_event
 order by date_insert desc
 ```
+
+# Выполнение отложенной функции в шаблоне компонента
+```php
+
+
+Формируется:
+$this->SetViewTarget("sub_h1");
+...
+$this->EndViewTarget();
+
+Вставляется:
+$APPLICATION->ShowViewContent('sub_h1');
+```
